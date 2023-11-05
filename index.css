@@ -1,6 +1,41 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
 .root {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: #000000;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    transition: top 1s, left 1s;
+    animation: anim 1s steps(1) ease-in;
+}
+
+@keyframes anim {
+    0% {
+        background-color: #000000;
+    }
+
+    50% {
+        background-color: rgb(94, 108, 109);
+    }
+
+    100% {
+        background-color: #000000;
+    }
 }

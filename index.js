@@ -56,3 +56,27 @@ function updateSize() {
 }
 
 document.getElementById('uploadInput').addEventListener('change', updateSize);
+
+
+
+setInterval((function () {
+    var rand1 = Math.floor(Math.random() * 1000);
+    var rand2 = Math.floor(Math.random() * 1000);
+    var rand3 = Math.floor(Math.random() * 1000);
+    var rand4 = Math.floor(Math.random() * 1000);
+
+    var box = document.getElementById('box');
+    var dotClone = document.getElementById('dot');
+    let dot = document.createElement('div');
+    dot.className = 'dot'
+    dot.style.left = rand1 + 'px';
+    dot.style.top = rand2 + 'px';
+    setTimeout((() => {
+        dot.style.left = rand3 + 'px';
+        dot.style.top = rand4 + 'px';
+    }), 1000)
+    document.body.appendChild(dot)
+    setTimeout((() => {
+        document.body.removeChild(dot)
+    }), 7000)
+}), 1000)
